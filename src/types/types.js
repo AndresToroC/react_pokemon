@@ -1,5 +1,5 @@
 export const types = {
     // Pokemon
     pokemonAll: '[Pokemon] All',
-    pokemonGet: '[Pokemon] Get'
+    pokemonGetId: '[Pokemon] Get Id'
 }

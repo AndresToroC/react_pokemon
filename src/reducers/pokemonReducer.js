@@ -3,6 +3,9 @@ import { types } from "../types/types";
 const initialState = {
     pokemons: {
         results: []
+    },
+    pokemonSelected: {
+        abilities: []
     }
 }
 
@@ -14,13 +17,10 @@ export const pokemonReducer = (state = initialState, action) => {
                 pokemons: action.payload
             }
 
-        case types.pokemonGet:
+        case types.pokemonGetId:
             return {
                 ...state,
-                pokemonsDetails: [
-                    ...state.pokemonsDetails,
-                    action.payload
-                ]
+                pokemonSelected: action.payload
             }
 
         default:

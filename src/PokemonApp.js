@@ -1,17 +1,10 @@
 import React from 'react'
-import { Popover } from '@headlessui/react'
-
-import { PokemonScreen } from './components/pokemon/PokemonScreen'
-import { Header } from './elements/Header'
+import { AppRoute } from './router/AppRoute'
 
 export const PokemonApp = () => {
   return (
     <>
-      <Header />
-
-      <Popover>
-        <PokemonScreen />
-      </Popover>
+      <AppRoute />
     </>
   )
 }
