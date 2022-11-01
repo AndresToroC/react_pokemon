@@ -17,6 +17,23 @@ export const PokemonDetail = () => {
     dispatch(pokemonGetId(pokemonId))
   }, [dispatch, pokemonId])
   
+  if (!pokemon.id) {
+    return (
+      <>
+        <Header />
+
+        <div className="py-10 flex justify-evenly">
+          No se encontro el pokemon seleccionado
+          <Link to="/" className='px-4 py-2 rounded-md bg-slate-600 text-white hover:bg-slate-500'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+            </svg>
+          </Link>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <Header />
@@ -25,7 +42,7 @@ export const PokemonDetail = () => {
         <div className='mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8'>
           <div className="h-50 sm:h-96 lg:h-96 xl:gap-x-8 rounded-lg bg-yellow-50">
             <img
-              src={ `${ base_url_img }${ pokemonId }.svg` }
+              src={ `${ base_url_img }${ pokemon.id }.svg` }
               alt="-"
               className="mx-auto py-16 w-44 h-90"
             />

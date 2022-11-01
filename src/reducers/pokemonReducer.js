@@ -25,6 +25,12 @@ export const pokemonReducer = (state = initialState, action) => {
                 pokemonSelected: action.payload
             }
 
+        case types.pokemonSelectedClear:
+            return {
+                ...state,
+                pokemonSelected: initialState.pokemonSelected
+            }
+
         default:
             return state;
     }
