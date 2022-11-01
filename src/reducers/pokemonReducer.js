@@ -5,7 +5,9 @@ const initialState = {
         results: []
     },
     pokemonSelected: {
-        abilities: []
+        abilities: [],
+        stats: [],
+        species: {}
     }
 }
 

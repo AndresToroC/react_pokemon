@@ -39,16 +39,38 @@ export const PokemonDetail = () => {
                 </svg>
               </Link>
             </div>
-            <h2 className="pt-10 text-1xl font-bold tracking-tight text-gray-900 uppercase">Habilidades</h2>
-            {
-              pokemon.abilities.map(({ ability, slot }) => (
-                <ul key={ slot }>
-                  <li>
-                    { ability.name }
-                  </li>
-                </ul>
-              ))
-            }
+
+            <div className='grid grid-cols-2'>
+              <div>
+                <h2 className="pt-10 text-1xl font-bold tracking-tight text-gray-900 uppercase">Habilidades</h2>
+
+                {
+                  pokemon.abilities.map(({ ability, slot }) => (
+                    <ul key={ slot } className="list-disc pl-6 capitalize">
+                      <li>
+                        { ability.name }
+                      </li>
+                    </ul>
+                  ))
+                }
+              </div>
+
+              <div>
+                <h2 className="pt-10 text-1xl font-bold tracking-tight text-gray-900 uppercase">Especie</h2>
+                <p className='capitalize'>{ pokemon.species.name }</p>
+              </div>
+            </div>
+
+            <h2 className="pt-10 text-1xl font-bold tracking-tight text-gray-900 uppercase">Datos</h2>
+            <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3'>
+              {
+                pokemon.stats.map(({ base_stat, stat }) => (
+                  <div key={ stat.name }>
+                    <p className='font-bold text-gray-500 capitalize'>{ stat.name }:</p> { base_stat }
+                  </div>
+                ))
+              }
+            </div>
           </div>
         </div>
       </div>
