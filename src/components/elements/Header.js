@@ -1,7 +1,7 @@
 import { Popover } from '@headlessui/react'
 import { Link } from 'react-router-dom'
 
-import pokemonLogo from '../pokemonLogo.png'
+import pokemonLogo from '../../pokemonLogo.png'
 
 export const Header = () => {
   return (

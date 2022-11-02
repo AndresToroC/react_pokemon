@@ -2,8 +2,10 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
 
+import { ThreeDots } from  'react-loader-spinner'
+
 import { pokemonGetId } from '../../actions/pokemonActions';
-import { Header } from '../../elements/Header';
+import { Header } from '../elements/Header';
 
 export const PokemonDetail = () => {
   const base_url_img = process.env.REACT_APP_API_IMG;
@@ -22,8 +24,20 @@ export const PokemonDetail = () => {
       <>
         <Header />
 
-        <div className="py-10 flex justify-evenly">
-          No se encontro el pokemon seleccionado
+        <div className="py-10 flex justify-center">
+          <ThreeDots 
+            height="80" 
+            width="80" 
+            radius="9"
+            color="#4fa94d" 
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClassName=""
+            visible={true}
+            />
+        </div>
+
+        <div className="py-10 flex justify-center">
           <Link to="/" className='px-4 py-2 rounded-md bg-slate-600 text-white hover:bg-slate-500'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />

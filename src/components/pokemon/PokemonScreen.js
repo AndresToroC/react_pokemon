@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { pokemonAll } from '../../actions/pokemonActions';
-import { Header } from '../../elements/Header';
-
+import { Header } from '../elements/Header';
 export const PokemonScreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -68,7 +67,7 @@ export const PokemonScreen = () => {
         <div className="mt-6 grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-4 lg:grid-cols-6 xl:gap-x-8">
           {
             pokemons.results.map(({ name, url }) => (
-              <Link to={ `pokemon/${ url.split('/')[6] }` } key={ url }>
+              <Link to={ `pokemon/${ name }` } key={ url }>
                 <div className="group relative">
                   <div className="h-60 rounded-lg bg-yellow-50 group-hover:opacity-70">
                     <img
